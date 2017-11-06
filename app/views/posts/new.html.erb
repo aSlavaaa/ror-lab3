@@ -1,16 +1,12 @@
 <%= form_for :post, url:posts_path do |f| %>
-<% if @post.errors.any? %>
-	<% @post.errors.full_messages.each do |msg| %> 
-	<li><%= msg %></li>
-	<% end %>
-	<% end %>
-	
-	<p><%= f.label :title %>
-	<%= f.text_field :title %>
+ <% if @post.errors.any?  %>
+   <% @post.errors.full_messages.each do |msg| %>
+   <li><%= msg%></li>
+   <%end%>
+   <%end%>
 
-	<p><%= f.label :body %>
-	<%= f.text_area :body, cols: 40, rows:20 %><br />
 
-<p><%= f.submit "Save" %>
-</div>
-<% end %>
+<%= render 'posts/form', f:f %>
+
+
+<%end%>
