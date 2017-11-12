@@ -14,7 +14,7 @@
 
 <hr>
 <% @comments.each do |comment|%>
-<p>User <b><%= comment.user.nickname %></b> write: </p>
+<p> User <span style="color:blue"><%= comment.user.nickname %></span> write:</p>
 <%= comment.text %>
 <hr>
 <% end %>
